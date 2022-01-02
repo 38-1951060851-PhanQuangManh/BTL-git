@@ -30,14 +30,14 @@ iconclose.addEventListener('click',toggleModal)
 
  function showError(input, message){
      let parent = input.parentElement;
-     let small = parent.querySelector('small')
+     let small = parent.querySelector('.smallpassword')
      parent.classList.add('error')
      small.innerText = message 
  }  
 
  function showSuccess(input){
     let parent = input.parentElement;
-    let small = parent.querySelector('small')
+    let small = parent.querySelector('.smallword')
     parent.classList.remove('error')
     small.innerText = ''
  }
@@ -60,39 +60,43 @@ iconclose.addEventListener('click',toggleModal)
 
     }
 
- function checkEmailError(input){
-    const regexEmail =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    input.value = input.value.trim()
+//  function checkEmailError(input){
+//     const regexEmail =
+//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//     input.value = input.value.trim()
 
-    let isEmailError = !regexEmail.test(input.value)
-    if(regexEmail.test(input.value)){
-       showSuccess(input)
-    }else{
-        showError(input, 'Email Invalid')
-    }
+//     let isEmailError = !regexEmail.test(input.value)
+//     if(regexEmail.test(input.value)){
+//        showSuccess(input)
+//     }else{
+//         showError(input, 'Email Invalid')
+//     }
 
-    return isEmailError
+//     return isEmailError
 
-}
-
-form.addEventListener('submit',function(e){
-    e.preventDefault()
-
-    let isEmptyError = checkEmptyError([email,password])
-     let isEmailError = checkEmailError(email)
-})
-
- 
-
-
-// var signup = document.querySelector('.signup')
-//  var modol = document.querySelector('.modol')
-// var iclose = document.querySelector('.container10 i')
-
-// function toggleModal(){
-//     modol.classList.toggle('hibe')
 // }
 
-// signup.addEventListener('click',toggleModal)
-// iclose.addEventListener('click',toggleModal)
+// form.addEventListener('submit',function(e){
+//     e.preventDefault()
+
+//     let isEmptyError = checkEmptyError([email,password])
+//      let isEmailError = checkEmailError(email)
+// })
+
+ 
+//ajax
+$(document).ready(function(){
+
+    $("#email").change(function(){
+        let emailPattern = /(@gmail.com)/;
+        if(emailPattern.test($(this).val()) == false){
+            $(".smallemail").text("Invalid email").css("color","red");
+        }
+
+        $.ajax({
+            url : "pro"
+        })
+    })
+})
+
+

@@ -17,7 +17,7 @@
 <dangnhap>
         <div class="modol ">
 
-            <form action="">
+            <form action="process-signup.php " method="post">
                 <div class="container10 error">
                 
                     <i class="bi bi-x-lg"></i>

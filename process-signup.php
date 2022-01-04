@@ -18,12 +18,12 @@ $pass1 = $_POST[ 'txtpass'];
     $error = "Yourname or Email is existed";
        header("location: signup.php?error=$error"); //Chuyển hướng về Trang quản trị
    }else{
-    
-       $sql02 = "INSERT INTO db_nguoidung (email,tenngdung,pass) values ('$email1','$name1','$pass1' )";
+        $pass_hash = password_hash($pass1, PASSWORD_DEFAULT);
+       $sql02 = "INSERT INTO db_nguoidung (email,tenngdung,pass) values ('$email1','$name1',' $pass_hash' )";
        $result02 = mysqli_query($conn,$sql02);
 
        if($result02 == true){
-           header("location:meetup.php");
+           header("location:homemeetup.php");
        }else{
            $error = "Can not insert record . Please check ....";
            header("location: signup.php?error=$error");

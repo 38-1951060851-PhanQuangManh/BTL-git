@@ -20,8 +20,7 @@
             <form action="process-signup.php " method="post">
                 <div class="container10 error">
                 
-                    <i class="bi bi-x-lg"></i>
-                <img src="./img/logo.png" alt="">
+            <a href="meetup.php"><img src="./img/logo.png" alt=""></a>
                 <h1>Sign Up</h1>
                 <p>Not a member yet?               <a href="meetup.php">login</a></p>
 

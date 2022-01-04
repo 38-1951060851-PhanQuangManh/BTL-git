@@ -716,9 +716,9 @@ background: rgba(0,0,0, 0.6);
                    <input id= 'password' type="password" name="txtpass" placeholder="Password"> 
                    <small class="smallpassword"></small>
                </div>
-                
+             
 
-                <button type="submit" class="btn-submit"> Log in </button>
+                <button type="submit" class="btn-submit" name="dangnhap"> Log in </button>
 
                 <hr>
                 

@@ -11,7 +11,7 @@
     <title>Document</title>
 
     <style>
-        *{
+  *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -61,6 +61,8 @@ body{
 .h-search {
     align-items: center;
     display: flex;
+    margin-left: 50px;
+    
 }
 
 .h-search form{
@@ -92,13 +94,14 @@ body{
 .h-right{
     display: flex;
     align-items: center;
+    margin-left: 600px;
+    margin-right: 0px;
 
 }
 
 .h-right ul{
     display: flex;
     
-    padding: 10px;
 }
 
 .h-right ul li a{
@@ -130,17 +133,35 @@ body{
  }
 
 
- #nav i {
-     margin-top: 50px;
-     position: relative;
-
- }
-
- #nav ul li a{
-     position: absolute;
- 
+ .h-nav {
+    
+    width: 100%;
     
  }
+
+ .h-nav li{
+     position: relative;
+ }
+
+ .h-nav .subnav{
+    background-color: #fff;
+   padding-right: 5px;
+position: absolute;
+   display: none;
+    
+ }
+
+ .h-nav ul li a{
+    text-decoration: none;
+    
+    
+ }
+
+ .h-nav li:hover .subnav{
+     display: block;
+ }
+
+ 
 
  .content img{
      margin-left: 40%;
@@ -386,23 +407,28 @@ body{
                     <i class="bi bi-person"></i>
                     
                 </button>
-                <div id="nav">
-                    <i class="bi bi-caret-down"></i>
-                    <ul >
-                        <li><a href="">your events</a></li>
-                        <li><a href="">your groups</a></li>
-                        <hr>
-                        <li><a href="">Display Profil</a></li>
-                        <li><a href="">Settings</a></li>
-                        <li><a href="">Sign out</a></li>
-                    </ul>
-                </div>
                         
-               
-                
-
+        
             </div>
-    
+
+            <div class="h-nav">
+                 
+                    <ul >
+                        <li><i class="bi bi-caret-down"></i>
+                            <ul class="subnav">
+                                <li><a href="">your events</a></li>
+                            <li><a href="">your groups</a></li>
+                            <hr>
+                            <li><a href="">Display Profile</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li><a href="">Sign out</a></li>
+                            </ul>
+                            
+                        </ul>
+                        </li>
+                        
+                </div>
+
         </div>
     
     </header>

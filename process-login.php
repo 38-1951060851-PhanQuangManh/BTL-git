@@ -1,8 +1,8 @@
 <?php
  session_start();
  if(isset($_POST['dangnhap'])){
-    $email = $_POST['txtEmail'];
-    $pass  = $_POST['txtPass'];
+    $email = $_POST['txtemail'];
+    $pass  = $_POST['txtpass'];
  
     
     $conn = mysqli_connect('localhost','root','','btl_meetup');
@@ -15,7 +15,7 @@
     $result = mysqli_query($conn,$sql);
     if(mysqli_num_rows($result) > 0){
 
-        $_SESSION['isLoginOK'] = $email;
+        $_SESSION['ismeetupOK'] = $email;
         header("location: homemeetup.php"); //Chuyển hướng về Trang quản trị
     }else{
         $error = "Bạn nhập thông tin Email hoặc mật khẩu chưa chính xác";
@@ -24,6 +24,6 @@
 
     mysqli_close($conn);
 }else{
-    header("location:login.php");
+    header("location:meetup.php");
 }
 ?>

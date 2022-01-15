@@ -697,7 +697,7 @@ background: rgba(0,0,0, 0.6);
     <dangnhap>
         <div class="model hide ">
 
-            <form action="">
+            <form action="process-login">
                 <div class="container9 error">
                 
                     <i class="bi bi-x-lg"></i>

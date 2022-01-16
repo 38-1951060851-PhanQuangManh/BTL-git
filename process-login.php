@@ -24,6 +24,6 @@
 
     mysqli_close($conn);
 }else{
-    header("location:meetup.php");
+    header("location:homemeetup.php");
 }
 ?>
